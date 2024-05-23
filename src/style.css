@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.container{
+    display: flex;
+    background-color: rgba(47, 79, 79, 0.84);
+    height: 100vh;
+    padding: 2rem;
+}
+
+.slider-object {
+    background-color: #948FA8;
+    height: 50vh;
+    width: 4rem;
+}
