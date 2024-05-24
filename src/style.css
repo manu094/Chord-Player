@@ -15,10 +15,33 @@ h1 {
     background-color: rgba(47, 79, 79, 0.84);
     height: 100vh;
     padding: 2rem;
+    justify-content: space-evenly;
 }
 
 .slider-object {
+    display: flex;
+    flex-direction: column;
     background-color: #948FA8;
     height: 50vh;
     width: 4rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+    transition: background-color 0.25s, border-radius 0.25s;
+    align-content: center;
+}
+
+.slider-object:hover {
+    background-color: #BCB6D6;
+    border-radius: 2rem;
+}
+
+.slider-header {
+    height: 5%;
+    text-align: center;
+    margin: 0.5rem auto;
+    color: #173737;
+}
+
+.slider-object:hover > .slider-header {
+    color: black;
 }
