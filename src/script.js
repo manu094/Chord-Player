@@ -3,7 +3,7 @@ const sliderSource = document.getElementById('slider-template').innerHTML;
 const sliderTemplate = Handlebars.compile(sliderSource);
 
 const data = {
-    headers: ['Master', 'Drums', 'Synth', 'Guitar', 'Bass', 'Piano', 'Strings all day heheheha', 'Drone'],
+    headers: ['Master', 'Drums', 'Synthesizer', 'Guitar', 'Bass', 'Piano', 'Strings all day', 'Drone'],
     test: 'test',
 }
 

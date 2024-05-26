@@ -19,58 +19,94 @@ h1 {
     justify-content  : center;
 }
 
+.slider-hover-detect {
+    height           : 50vh;
+
+}
+
+/*Variables inside of slider-hover-detect*/
+
+.slider-hover-detect {
+    --slider-object-width: 3.5rem;
+    --slider-object-corners-radius: calc(var(--slider-object-width) / 4);
+    --slider-object-corners-radius-hovered: calc(var(--slider-object-width) / 2);
+
+    --slider-container-bg: rgba(67, 67, 95, 0.37);
+    --slider-container-bg-hovered: rgba(36, 36, 74, 1);
+}
+
+/*Properties for slider-object*/
+
 .slider-object {
     display          : flex;
     flex-direction   : column;
     font-family      : 'Rubik', sans-serif;
     background-color : #948FA8;
     height           : 100%;
-    width            : 3.5rem;
+    width            : var(--slider-object-width);
     margin           : 0 0.25rem;
-    border-radius    : 1rem;
-    transition       : background-color 0.25s, border-radius 0.25s;
+    border-radius    : var(--slider-object-corners-radius);
+    transition       : all 0.25s;
     align-content    : center;
-}
-
-.slider-hover-detect {
-    height           : 50vh;
-
+    overflow: hidden;
 }
 
 .slider-hover-detect:hover .slider-object {
     background-color : #BCB6D6;
-    border-radius    : 2rem;
+    border-radius    : var(--slider-object-corners-radius-hovered);
 }
 
-.slider-hover-detect:hover span {
-    color : black;
-}
-
-.slider-hover-detect:hover .slider-header-container {
-    height: 10%;
-    overflow: hidden;
-}
+/*Properties for slider-header-container*/
 
 .slider-header-container {
     display: flex;
     justify-content: start;
     height     : 50%;
-    overflow   : hidden;
-    margin-top : 0.5rem;
+    margin-top : var(--slider-object-corners-radius);
+    /*overflow: hidden;*/
+    transition       : all 0.25s;
 }
 
-.slider-header-container span {
+.slider-hover-detect:hover .slider-header-container {
+    height: 15%;
+    margin-top : var(--slider-object-corners-radius-hovered);
+}
+
+/*Properties for the h2 element inside of slider-hover-detect*/
+
+.slider-header-container h2 {
     writing-mode : vertical-rl;
-    text-align   : center;
+    text-align   : left;
     font-family: 'Rubik', sans-serif;
     font-size : 1.3rem;
     font-weight: bold;
     color        : #2B5959;
     transition   : all 0.25s;
+    white-space: nowrap;
 }
 
+.slider-hover-detect:hover h2 {
+    color : black;
+}
 
+/*Properties for slider-container*/
 
-.slider-rail {
-    height:
+.slider-container {
+    height: 50%;
+    padding: 2%;
+    background-color: var(--slider-container-bg);
+    border-radius : var(--slider-object-corners-radius);
+    transition  : all 0.25s;
+}
+
+.slider-hover-detect:hover .slider-container {
+    height: 85%;
+    background-color: var(--slider-container-bg-hovered);
+    border-radius : var(--slider-object-corners-radius-hovered);
+}
+
+/*Properties for slider-rail*/
+
+.slider-rail {;
+    height: 100%;
 }
