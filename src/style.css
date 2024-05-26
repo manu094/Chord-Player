@@ -1,47 +1,76 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
+    box-sizing  : border-box;
+    margin      : 0;
+    padding     : 0;
+    border      : 0;
+    outline     : 0;
+    font-family : 'Dosis', sans-serif;
 }
 
 h1 {
-    font-size: 2em;
+    font-size : 2em;
 }
 
-.container{
-    display: flex;
-    background-color: rgba(47, 79, 79, 0.84);
-    height: 100vh;
-    padding: 2rem;
-    justify-content: space-evenly;
+.container {
+    display          : flex;
+    background-color : rgb(83, 117, 117);
+    height           : 100vh;
+    padding          : 2rem;
+    justify-content  : center;
 }
 
 .slider-object {
+    display          : flex;
+    flex-direction   : column;
+    font-family      : 'Rubik', sans-serif;
+    background-color : #948FA8;
+    height           : 100%;
+    width            : 3.5rem;
+    margin           : 0 0.25rem;
+    border-radius    : 1rem;
+    transition       : background-color 0.25s, border-radius 0.25s;
+    align-content    : center;
+}
+
+.slider-hover-detect {
+    height           : 50vh;
+
+}
+
+.slider-hover-detect:hover .slider-object {
+    background-color : #BCB6D6;
+    border-radius    : 2rem;
+}
+
+.slider-hover-detect:hover span {
+    color : black;
+}
+
+.slider-hover-detect:hover .slider-header-container {
+    height: 10%;
+    overflow: hidden;
+}
+
+.slider-header-container {
     display: flex;
-    flex-direction: column;
-    background-color: #948FA8;
-    height: 50vh;
-    width: 4rem;
-    margin: 0.25rem;
-    border-radius: 1rem;
-    transition: background-color 0.25s, border-radius 0.25s;
-    align-content: center;
+    justify-content: start;
+    height     : 50%;
+    overflow   : hidden;
+    margin-top : 0.5rem;
 }
 
-.slider-object:hover {
-    background-color: #BCB6D6;
-    border-radius: 2rem;
+.slider-header-container span {
+    writing-mode : vertical-rl;
+    text-align   : center;
+    font-family: 'Rubik', sans-serif;
+    font-size : 1.3rem;
+    font-weight: bold;
+    color        : #2B5959;
+    transition   : all 0.25s;
 }
 
-.slider-header {
-    height: 5%;
-    text-align: center;
-    margin: 0.5rem auto;
-    color: #173737;
-}
 
-.slider-object:hover > .slider-header {
-    color: black;
+
+.slider-rail {
+    height:
 }

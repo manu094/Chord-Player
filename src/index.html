@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang='en'>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <meta charset='UTF-8'>
     <meta name='viewport'
           content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
@@ -9,7 +12,26 @@
     <!--suppress HtmlUnknownTarget -->
     <link rel='icon' type='image/x-icon' href='..\icons\Chord_player_icon.png'>
     <link rel='stylesheet' href='style.css'>
-    <script src='script.js' defer></script>
+    <script src='./script.js' rel='text/javascript' defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js'></script>
+    <script id='slider-template' type='text/x-handlebars-template'>
+        {{#each headers}}
+        <div class='slider-hover-detect'>
+            <div class='slider-object'>
+                <div class='slider-header-container'>
+                        <span>{{this}}</span>
+                </div>
+                <div class='slider-container'>
+                    <div class='slider-rail'>
+                        <div class='slider'>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
 </head>
 <body>
     <div class='container'>
