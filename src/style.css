@@ -33,6 +33,11 @@ h1 {
 
     --slider-container-bg: rgba(67, 67, 95, 0.37);
     --slider-container-bg-hovered: rgba(36, 36, 74, 1);
+
+    --slider-small-height: 50%;
+    --slider-midder-height: 53%;
+    --slider-mid-height: 65%;
+    --slider-big-height: 85%;
 }
 
 /*Properties for slider-object*/
@@ -61,14 +66,14 @@ h1 {
 .slider-header-container {
     display: flex;
     justify-content: start;
-    height     : 50%;
+    height     : calc(100% - var(--slider-small-height));
     margin-top : var(--slider-corners-radius);
     /*overflow: hidden;*/
     transition       : all 0.25s;
 }
 
 .slider-hover-detect:hover .slider-header-container {
-    height: 15%;
+    height: calc(100% - var(--slider-big-height));
     margin-top : var(--slider-corners-radius-smaller);
 }
 
@@ -92,7 +97,7 @@ h1 {
 /*Properties for slider-container*/
 
 .slider-container {
-    height: 50%;
+    height: var(--slider-small-height);
     padding: 2%;
     background-color: var(--slider-container-bg);
     border-radius : var(--slider-corners-radius);
@@ -100,9 +105,34 @@ h1 {
 }
 
 .slider-hover-detect:hover .slider-container {
-    height: 85%;
+    height: var(--slider-big-height);
     background-color: var(--slider-container-bg-hovered);
     border-radius : var(--slider-corners-radius-smaller);
+}
+
+/*Properties to what happens in the slider-hover-detect that is just before and
+just after the hovered slider-hover-detect*/
+
+.slider-hover-detect:has(+ .slider-hover-detect:hover) {
+    .slider-container {
+        height: var(--slider-mid-height);
+    }
+}
+
+.slider-hover-detect:hover + .slider-hover-detect .slider-container{
+    height: var(--slider-mid-height);
+}
+
+/*then same thing around those elements*/
+
+.slider-hover-detect:has(+ * + .slider-hover-detect:hover) {
+    .slider-container {
+        height: var(--slider-midder-height);
+    }
+}
+
+.slider-hover-detect:hover + * + .slider-hover-detect .slider-container{
+    height: var(--slider-midder-height);
 }
 
 /*Properties for slider-rail*/
