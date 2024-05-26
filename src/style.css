@@ -7,13 +7,17 @@
     font-family : 'Dosis', sans-serif;
 }
 
+:root {
+    --main-backgound-color: #102F3D;
+}
+
 h1 {
     font-size : 2em;
 }
 
 .container {
     display          : flex;
-    background-color : rgb(83, 117, 117);
+    background-color : var(--main-backgound-color);
     height           : 100vh;
     padding          : 2rem;
     justify-content  : center;
@@ -31,8 +35,10 @@ h1 {
     --slider-corners-radius: calc(var(--slider-object-width) / 2);
     --slider-corners-radius-smaller: calc(var(--slider-object-width) / 4);
 
-    --slider-container-bg: rgba(67, 67, 95, 0.37);
-    --slider-container-bg-hovered: rgba(36, 36, 74, 1);
+    --slider-container-bg-small: rgba(66, 66, 94, 0.37);
+    --slider-container-bg-midder: rgba(56, 56, 87, 0.58);
+    --slider-container-bg-mid: rgba(46, 46, 80, 0.79);
+    --slider-container-bg-big: rgba(36, 36, 74, 1);
 
     --slider-small-height: 50%;
     --slider-midder-height: 53%;
@@ -85,7 +91,7 @@ h1 {
     font-family: 'Rubik', sans-serif;
     font-size : 1.3rem;
     font-weight: bold;
-    color        : #2B5959;
+    color        : var(--main-backgound-color);
     transition   : all 0.25s;
     white-space: nowrap;
 }
@@ -99,14 +105,14 @@ h1 {
 .slider-container {
     height: var(--slider-small-height);
     padding: 2%;
-    background-color: var(--slider-container-bg);
+    background-color: var(--slider-container-bg-small);
     border-radius : var(--slider-corners-radius);
     transition  : all 0.25s;
 }
 
 .slider-hover-detect:hover .slider-container {
     height: var(--slider-big-height);
-    background-color: var(--slider-container-bg-hovered);
+    background-color: var(--slider-container-bg-big);
     border-radius : var(--slider-corners-radius-smaller);
 }
 
@@ -116,11 +122,13 @@ just after the hovered slider-hover-detect*/
 .slider-hover-detect:has(+ .slider-hover-detect:hover) {
     .slider-container {
         height: var(--slider-mid-height);
+        background-color: var(--slider-container-bg-mid);
     }
 }
 
 .slider-hover-detect:hover + .slider-hover-detect .slider-container{
     height: var(--slider-mid-height);
+    background-color: var(--slider-container-bg-mid);
 }
 
 /*then same thing around those elements*/
@@ -128,11 +136,13 @@ just after the hovered slider-hover-detect*/
 .slider-hover-detect:has(+ * + .slider-hover-detect:hover) {
     .slider-container {
         height: var(--slider-midder-height);
+        background-color: var(--slider-container-bg-midder);
     }
 }
 
 .slider-hover-detect:hover + * + .slider-hover-detect .slider-container{
     height: var(--slider-midder-height);
+    background-color: var(--slider-container-bg-midder);
 }
 
 /*Properties for slider-rail*/
