@@ -28,8 +28,8 @@ h1 {
 
 .slider-hover-detect {
     --slider-object-width: 3.5rem;
-    --slider-object-corners-radius: calc(var(--slider-object-width) / 4);
-    --slider-object-corners-radius-hovered: calc(var(--slider-object-width) / 2);
+    --slider-corners-radius: calc(var(--slider-object-width) / 2);
+    --slider-corners-radius-smaller: calc(var(--slider-object-width) / 4);
 
     --slider-container-bg: rgba(67, 67, 95, 0.37);
     --slider-container-bg-hovered: rgba(36, 36, 74, 1);
@@ -45,7 +45,7 @@ h1 {
     height           : 100%;
     width            : var(--slider-object-width);
     margin           : 0 0.25rem;
-    border-radius    : var(--slider-object-corners-radius);
+    border-radius    : var(--slider-corners-radius);
     transition       : all 0.25s;
     align-content    : center;
     overflow: hidden;
@@ -53,7 +53,7 @@ h1 {
 
 .slider-hover-detect:hover .slider-object {
     background-color : #BCB6D6;
-    border-radius    : var(--slider-object-corners-radius-hovered);
+    border-radius    : var(--slider-corners-radius-smaller);
 }
 
 /*Properties for slider-header-container*/
@@ -62,14 +62,14 @@ h1 {
     display: flex;
     justify-content: start;
     height     : 50%;
-    margin-top : var(--slider-object-corners-radius);
+    margin-top : var(--slider-corners-radius);
     /*overflow: hidden;*/
     transition       : all 0.25s;
 }
 
 .slider-hover-detect:hover .slider-header-container {
     height: 15%;
-    margin-top : var(--slider-object-corners-radius-hovered);
+    margin-top : var(--slider-corners-radius-smaller);
 }
 
 /*Properties for the h2 element inside of slider-hover-detect*/
@@ -95,14 +95,14 @@ h1 {
     height: 50%;
     padding: 2%;
     background-color: var(--slider-container-bg);
-    border-radius : var(--slider-object-corners-radius);
+    border-radius : var(--slider-corners-radius);
     transition  : all 0.25s;
 }
 
 .slider-hover-detect:hover .slider-container {
     height: 85%;
     background-color: var(--slider-container-bg-hovered);
-    border-radius : var(--slider-object-corners-radius-hovered);
+    border-radius : var(--slider-corners-radius-smaller);
 }
 
 /*Properties for slider-rail*/
